@@ -1,25 +1,21 @@
 ﻿using System;
 using System.Collections;
+using System.IO;
 
 string eaglePath = args[0];//@"E:\T7\Photos\个人.library"
 string targetPath = args[1];//E:\新建文件夹
 
 //读取当前目录下的db.json文件内容，到json字符串
 
-
-
 //遍历E:\T7\Photos\个人.library所有文件文件，不包含.json文件，文件名以_thumbnail结束的文件
-var files = Directory.GetFiles(eaglePath, "*.*", SearchOption.AllDirectories)
-    .Where(s => !s.EndsWith(".json") && !s.Contains("_thumbnail."));
+List<string> files = Directory.GetFiles(eaglePath, "*.*", SearchOption.AllDirectories).Where(s => !s.EndsWith(".json") && !s.Contains("_thumbnail."));
 
-foreach (string file in files)
+public void GetFiles()
 {
-    
+    foreach (string item in files)
+    {
+    }
 }
-
-
-
-
 
 
 public class EagleExporterDatebase
